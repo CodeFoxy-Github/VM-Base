@@ -1,10 +1,28 @@
 @echo off
-echo "#1 Windows 10 Home x64"
+echo warning!!!
+echo this only works in virtualbox!
+timeout 3 /nobreak
+cls
+echo 1. Windows 10 Home x64
+echo 2. Windows 10 Professional x64
 set /p id="Enter ID: "
 if %id% == 1 (
 start "" "https://drive.google.com/uc?id=1SQHTssEtXWNppTeQH9IP2ds88DMhnY-E&confirm=t"
 )
-timeout /t 200
+if %id% == 2 (
+start "" "https://drive.google.com/uc?id=1Z6vD5BNrMqKOWAt7iZ9txA37bYHPynCU&export=download&confirm=t"
+)
+
+echo if download is completed press any key to install
+timeout /t -1
+cls
+cd C:\Program Files\Oracle\VirtualBox
+if %id% == 1 (
+VBoxManage createvm --name "Windows 10 Home x64" --register
+)
+if %id% == 2 (
+VBoxManage createvm --name "Windows 10 Professional x64" --register
+)
 setlocal
 
 cd /d %~dp0
@@ -26,7 +44,15 @@ if exist %vbs% del /f /q %vbs%
 >>%vbs% echo Set objShell = Nothing
 cscript //nologo %vbs%
 if exist %vbs% del /f /q %vbs%
-exit /b
 
-cd C:\Program Files\Oracle\VirtualBox\
-VirtualBox.exe
+
+
+
+
+
+
+
+
+
+echo install completed!
+timeout /t -1
