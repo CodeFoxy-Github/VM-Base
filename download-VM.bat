@@ -8,7 +8,6 @@ set /p ans="install VirtualBox6.1.34 ?"
 if %ans% == yes (
 winget install Oracle.VirtualBox
 )
-msiexec.exe /i %cd%\VirtualBox-6.1.34a-150636-Win.exe /QN /L*V "C:\Temp\msilog.log"
 echo 1. Windows 10 Home x64
 echo 2. Windows 10 Professional x64
 set /p id="Enter ID: "
