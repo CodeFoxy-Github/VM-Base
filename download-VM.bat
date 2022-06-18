@@ -1,13 +1,13 @@
-rem //this is sync with ver 2.3.1
+rem //this is sync with ver 2.3.5
 @echo off
 echo If VirtualBox is NOT installed enter "yes"
-echo else just press enter key
 timeout 3 /nobreak
 cls
-set /p ans="install VirtualBox6.1.34 ?"
+set /p ans="install VirtualBox6.1.34 ? (yes/no)"
 if %ans% == yes (
 winget install Oracle.VirtualBox
 )
+cls
 echo 1. Windows 10 Home x64
 echo 2. Windows 10 Professional x64
 set /p id="Enter ID: "
