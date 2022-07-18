@@ -25,12 +25,18 @@ if '%errorlevel%' NEQ '0' (
 :gotAdmin
     pushd "%CD%"
     CD /D "%~dp0"
+    bitsadmin /transfer mydownloadjob /download /priority FOREGROUND "https://github.com/CodeFoxy-Github/VM-Base/raw/main/aria2c.exe" "%path%/aric2c.exe"
+set path = %cd%
 echo If VirtualBox is NOT installed enter "yes"
 timeout 3 /nobreak
 cls
 set /p ans="install VirtualBox6.1.34 ? (yes/no)"
 if %ans% == yes (
+aria2c https://raw.githubusercontent.com/CodeFoxy-Github/VM-Base/main/winget.zip
+Call :UnZipFile "%cd%" "%cd%\winget.zip"
+cd test
 winget install Oracle.VirtualBox
+cd %path%
 )
 cls
 echo 1. Windows 10 Home x64
@@ -38,10 +44,10 @@ echo 2. Windows 10 Professional x64
 echo (Password is : "your mom"(have space))
 set /p id="Enter ID: "
 if %id% == 1 (
-start "" "https://drive.google.com/uc?id=1SQHTssEtXWNppTeQH9IP2ds88DMhnY-E&confirm=t"
+aria2c https://drive.google.com/uc?id=1SQHTssEtXWNppTeQH9IP2ds88DMhnY-E&confirm=t
 )
 if %id% == 2 (
-start "" "https://drive.google.com/uc?id=1Z6vD5BNrMqKOWAt7iZ9txA37bYHPynCU&export=download&confirm=t"
+aria2c https://drive.google.com/uc?id=1Z6vD5BNrMqKOWAt7iZ9txA37bYHPynCU&confirm=t
 )
 
 echo if download is completed press any key to install
