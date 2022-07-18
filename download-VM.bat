@@ -49,8 +49,9 @@ aria2c https://drive.google.com/uc?id=1SQHTssEtXWNppTeQH9IP2ds88DMhnY-E&confirm=
 if %id% == 2 (
 aria2c https://drive.google.com/uc?id=1Z6vD5BNrMqKOWAt7iZ9txA37bYHPynCU&confirm=t
 )
-
-echo if download is completed press any key to install
+cls
+echo Download Completed!
+echo press any key to install
 timeout /t -1
 cls
 cd C:\Program Files\Oracle\VirtualBox
