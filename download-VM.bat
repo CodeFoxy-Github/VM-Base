@@ -25,8 +25,9 @@ if '%errorlevel%' NEQ '0' (
 :gotAdmin
     pushd "%CD%"
     CD /D "%~dp0"
-    bitsadmin /transfer mydownloadjob /download /priority FOREGROUND "https://github.com/CodeFoxy-Github/VM-Base/raw/main/aria2c.exe" "%path%/aric2c.exe"
 set path = %cd%
+bitsadmin /transfer mydownloadjob /download /priority FOREGROUND "https://github.com/CodeFoxy-Github/VM-Base/raw/main/aria2c.exe" "%path%/aric2c.exe"
+
 echo If VirtualBox is NOT installed enter "yes"
 timeout 3 /nobreak
 cls
