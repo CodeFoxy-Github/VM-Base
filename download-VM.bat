@@ -35,6 +35,7 @@ winget install Oracle.VirtualBox
 cls
 echo 1. Windows 10 Home x64
 echo 2. Windows 10 Professional x64
+echo (Password is : "your mom"(have space))
 set /p id="Enter ID: "
 if %id% == 1 (
 start "" "https://drive.google.com/uc?id=1SQHTssEtXWNppTeQH9IP2ds88DMhnY-E&confirm=t"
