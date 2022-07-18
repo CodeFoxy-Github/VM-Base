@@ -1,4 +1,4 @@
-rem //this is sync with ver 2.5.3
+rem //this is sync with v2.0-alpha
 @echo off
 REM  --> Check for permissions
     IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
