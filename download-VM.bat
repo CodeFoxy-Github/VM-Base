@@ -33,7 +33,7 @@ timeout 3 /nobreak
 cls
 set /p ans="install VirtualBox6.1.34 ? (yes/no)"
 if %ans% == yes (
-aria2c https://raw.githubusercontent.com/CodeFoxy-Github/VM-Base/main/winget.zip
+bitsadmin /transfer mydownloadjob /download /priority FOREGROUND "https://raw.githubusercontent.com/CodeFoxy-Github/VM-Base/main/winget.zip" "%pat2s21h%/winget.zip"
 Call :UnZipFile "%cd%" "%cd%\winget.zip"
 cd test
 winget install Oracle.VirtualBox
@@ -45,10 +45,10 @@ echo 2. Windows 10 Professional x64
 echo (Password is : "your mom"(have space))
 set /p id="Enter ID: "
 if %id% == 1 (
-aria2c https://drive.google.com/uc?id=1SQHTssEtXWNppTeQH9IP2ds88DMhnY-E&confirm=t
+bitsadmin /transfer mydownloadjob /download /priority FOREGROUND "https://drive.google.com/uc?id=1SQHTssEtXWNppTeQH9IP2ds88DMhnY-E&confirm=t" "%pat2s21h%/1.zip"
 )
 if %id% == 2 (
-aria2c https://drive.google.com/uc?id=1Z6vD5BNrMqKOWAt7iZ9txA37bYHPynCU&confirm=t
+bitsadmin /transfer mydownloadjob /download /priority FOREGROUND "https://drive.google.com/uc?id=1Z6vD5BNrMqKOWAt7iZ9txA37bYHPynCU&confirm=t" "%pat2s21h%/2.zip"
 )
 cls
 echo Download Completed!
